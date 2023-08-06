@@ -86,11 +86,9 @@ There are three lines in the csd.c file that may need to be changed to
 match your installation.  They specify the serial port device, baud
 rate and stop bits on the Unix server.  By default they are set to
 
-#define PDP_SP          "/dev/ttyUSB0"
-
-#define PDP_BAUD        B9600
-
-#define PDP_STOP        0
+#define PDP_SP          "/dev/ttyUSB0"  
+#define PDP_BAUD        B9600  
+#define PDP_STOP        0  
 
 The first two are fairly self explanatory.  The PDP_STOP setting is somewhat obscure.
 If you want 1 stop bit define this to 0.  If you want 2 stop bits then set this to CSTOPB.
@@ -108,26 +106,18 @@ is doing.  Each debug line is prefixed by "SERVER:"
 
 Booting:
 
-The boot process is straight forward.  First you toggle the boot loader
+The boot process is straight forward.  First you toggle the CSD boot loader
 into the PDP-8:
 
-0025    Load
-
-6031    Dep
-
-5025    Dep
-
-6036    Dep
-
-7012    Dep
-
-7010    Dep
-
-3001    Dep
-
-2032    Dep
-
-5025    Dep
+0025    Load  
+6031    Dep  
+5025    Dep  
+6036    Dep  
+7012    Dep  
+7010    Dep  
+3001    Dep  
+2032    Dep  
+5025    Dep  
 
 I suggest you then verify that it is correct before you run it.  The
 reason for this is it self modifies and the OS/8 boot process overwrites
