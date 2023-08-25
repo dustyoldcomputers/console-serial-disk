@@ -176,6 +176,7 @@ The handler has been run on an SBC6120 at 38400 baud.
 Vince has run the handler on his PDP-12 using his replacement console port FlipChip modules
 at speeds up to 115.2k baud.  This means it should also work on an 8/i and 8/l with Vince's
 boards substituted for the original modules.
+Kyle managed to get it to run on simh using socat to connect the two programs.
 
 It is expected that the handler will run on any of the Family of 8
 machines except for the PDP-5.  More on that later.  It will not work
@@ -203,8 +204,8 @@ problems.
 
 It won't work on a PDP-5.  In the PDP-5 the PC (Program Counter) is
 stored in memory location 0 and the boot code currently uses that.  I
-have completely re-written the boot code and did make the new boot
-compatible with the PDP-5.  This will be in version 1.2  I have since realized
+have completely re-written the boot code for version 1.2 and did make the new boot
+compatible with the PDP-5.  I have since realized
 that OS/8 will not run on a PDP-5 because when OS/8 loads its overlay it
 overwrites the PC and would crash.  So the boot is fixed but it won't help with
 the PDP-5.
