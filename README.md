@@ -1,12 +1,26 @@
 # console-serial-disk
-The CSD (Console Serial Disk) project is intended to allow an upgraded
-PDP-8 console serial port to be used for both the console and as the
-interface to a general purpose OS/8 device handler.  By upgraded I mean
-a higher baud rate (9600 or greater) and RS-232 (not current loop).  The
-reason for this is that while extra serial ports are still available for
-Omnibus based PDP-8's, extra serial ports on the earlier machines (Negi
-and Posibus) are virtually non-existent and quite a bit more difficult to
-make.  An extra serial port is a prerequisite for Kyle Owen's Serial Disk
+The CSD (Console Serial Disk) project is intended to allow a "Family of 8" computer
+with an upgraded console serial port to be used for both the console and as the
+interface to a general purpose OS/8 device handler.  A "Family of 8" computer is
+one of the following:  
+PDP-5  
+PDP-8  
+LINC-EIGHT  
+PDP-8/s  
+PDP-8/i  
+PDP-8/l  
+PDP-12  
+PDP-8/e  
+PDP-8/f  
+PDP-8/m  
+PDP-8/a  
+Harris 6100 CPU  
+Intersil 6120 CPU  
+By upgraded console serial port I mean a higher baud rate (9600 or greater) and
+RS-232 (not current loop).  The reason for this is that while extra serial ports
+are still available for Omnibus based PDP-8's, extra serial ports on the earlier
+machines (Negi and Posibus) are virtually non-existent and quite a bit more 
+difficult to make.  An extra serial port is a prerequisite for Kyle Owen's Serial Disk
 program.
 
 In its most basic use case all you need is:
@@ -165,18 +179,16 @@ much any Linux distro will work.  It also runs on a Raspberry Pi 400
 using the same microsd card.  It is running on an x86 based laptop running
 Ubuntu.
 
-It is expected that the server will work under most of the BSD Unix variants.
+It is expected that the server will also work under most of the BSD Unix variants.
 I believe it will also work under Minux version 3.
 
-The handler has been run on a PDP-8/e with an M8655 console port running
-at both 9600 and 19200 baud.
-The handler has been run on a PDP-8/a with an M8315 CPU card and the
-console port on the M8316 Option 1 card at 9600 baud.
-The handler has been run on an SBC6120 at 38400 baud.
-Vince has run the handler on his PDP-12 using his replacement console port FlipChip modules
-at speeds up to 115.2k baud.  This means it should also work on an 8/i and 8/l with Vince's
-boards substituted for the original modules.
-Kyle managed to get it to run on simh using socat to connect the two programs.
+The handler has been run on:  
+A PDP-8/a with an M8315 CPU card and the console port on the M8316 Option 1 card at 9600 baud.  
+An SBC6120 at 38400 baud.  
+A PDP-8/e with an M8655 console port running at both 9600 and 19200 baud.  
+A PDP-8/i.  
+A PDP-12 using his Vince's replacement console port FlipChip modules at speeds up to 115.2k baud.  
+On simh using socat to connect the two programs.  
 
 It is expected that the handler will run on any of the Family of 8
 machines except for the PDP-5.  More on that later.  It will not work
@@ -215,7 +227,8 @@ Performance:
 At 9600 baud a DIR takes about 20 seconds of activity before it starts
 displaying.  At 19200 it takes about 10 seconds.  At 38400 it takes about 5 seconds.
 At 115200 it takes about 1.6 seconds.  And yes, I know that a DIR is not normally
-considered to be any kind of benchmark.  But it sort of makes sense for this.
+considered to be any kind of benchmark.  But it makes sense for this because it is
+what you notice right away.
 
 If you find any problems or just have questions or comments you can
 email me.
